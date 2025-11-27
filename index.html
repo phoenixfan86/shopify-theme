@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="uk">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<link rel="stylesheet" href="./style/style.css" />
+		<title>Shopify theme</title>
+		<script src="./script/script.js" defer></script>
+	</head>
+	<body>
+		<section class="bestSellers" aria-labelledby="bs-heading">
+			<div class="bestSellers__content">
+				<div class="bestSellers__tab">
+					<header class="bestSellers__header">
+						<span class="bestSellers__label">Best sellers</span>
+						<h2 id="bs-heading" class="bestSellers__heading">
+							Trending Products
+						</h2>
+					</header>
+
+					<div class="bestSellers__products" id="bs-products">
+						<ul
+							class="bestSellers__list"
+							id="bs-list"
+							role="listbox"
+							aria-label="Collections"
+						>
+							<!-- список продуктів з JS -->
+						</ul>
+					</div>
+				</div>
+
+				<div class="bestSellers__details" id="bs-details" aria-live="polite">
+					<div class="bestSellers__card" id="bs-card">
+						<picture id="bs-picture">
+							<source
+								media="(max-width:420px)"
+								srcset="
+									./assets/img/placeholder.webp 1x,
+									./assets/img/placeholder.webp 2x
+								"
+							/>
+							<source
+								media="(max-width:991px)"
+								srcset="
+									./assets/img/placeholder.webp 1x,
+									./assets/img/placeholder.webp 2x
+								"
+							/>
+							<img
+								class="bestSellers__picture"
+								src="./assets/img/placeholder.webp"
+								alt="placeholder"
+							/>
+						</picture>
+
+						<div class="bestSellers__tags" id="bs-tags" aria-hidden="true">
+							<!-- Вставляємо теги якщо є -->
+						</div>
+						<div class="bestSellers__icons">
+							<button
+								class="bestSellers__iconBtn"
+								id="bs-heart"
+								title="Add to wishlist (no-op)"
+								aria-label="Wishlist (no function)"
+							>
+								<picture>
+									<source
+										srcset="./assets/img/save.png"
+										media="(max-width: 420px)"
+									/>
+									<img src="./assets/img/heart.png" alt="wishlist" />
+								</picture>
+							</button>
+							<button
+								class="bestSellers__iconBtn"
+								id="bs-eye"
+								title="Quick view"
+								aria-haspopup="dialog"
+							>
+								<img src="./assets/img/eye.png" alt="Quick view" />
+							</button>
+						</div>
+
+						<div
+							class="bestSellers__detailsInfo"
+							id="bs-info"
+							aria-hidden="true"
+						>
+							<a
+								href=""
+								id="bs-productInfo"
+								class="bestSellers__productInfo"
+								target="_blank"
+								rel="noopener"
+							>
+								<h3 class="bestSellers__productName" id="bs-name">
+									Product name
+								</h3>
+							</a>
+							<div class="bestSellers__productPrices">
+								<p class="bestSellers__productPrice" id="bs-price">$0.00</p>
+								<p class="bestSellers__productOldPrice" id="bs-oldPrice">
+									$0.00
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Modal -->
+		<div
+			class="bestSellers__overlay"
+			id="bs-overlay"
+			role="dialog"
+			aria-modal="true"
+			aria-hidden="true"
+		>
+			<div
+				class="bestSellers__modal"
+				role="document"
+				aria-describedby="bs-modal-text"
+			>
+				<button
+					class="bestSellers__modalClose"
+					id="bs-modal-close"
+					aria-label="Close"
+				>
+					✕
+				</button>
+				<p id="bs-modal-text" style="margin: 18px 0; font-size: 16px"></p>
+			</div>
+		</div>
+	</body>
+</html>
